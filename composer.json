@@ -1,5 +1,5 @@
 {
-    "repositories": [
+    "repositories": [        
         {
             "type": "package",
             "package": {
@@ -18,14 +18,20 @@
     ],
     "require": {
         "wordpress/wordpress": "6.0.1"
+        
     },
     "extra": {
+        "installer-paths": {
+            "app/plugins/{$name}/": ["type:wordpress-plugin"],
+            "app/theme/{$name}/": ["type:wordpress-theme"]
+        },
         "webroot-dir": "wp",
         "webroot-package": "wordpress/wordpress"
     },
     "config": {
         "allow-plugins": {
-            "fancyguy/webroot-installer": true
+            "fancyguy/webroot-installer": true,
+            "composer/installers": true
         }
     }
 }
